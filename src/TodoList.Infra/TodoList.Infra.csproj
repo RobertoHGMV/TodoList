@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentMigrator" Version="3.1.3" />
+    <PackageReference Include="FluentMigrator.Runner" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TodoList.Common\TodoList.Common.csproj" />
+    <ProjectReference Include="..\TodoList.Domain\TodoList.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
