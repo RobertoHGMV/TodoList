@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TodoList.DependencyInjection;
+using TodoList.Infra.DbMigrations;
 
 namespace TodoList.Api
 {
@@ -43,14 +44,13 @@ namespace TodoList.Api
 
         private void ConfigureFluentMigrator(IServiceCollection services)
         {
-            var assemblyInfra = new DependencyResolver().GetAssemblyInfra();
-
             services.AddFluentMigratorCore()
                 .ConfigureRunner(
                 builder => builder
-               .AddSqlServer()
-               .WithGlobalConnectionString(Configuration["ConnStrSqlServer"])
-               .ScanIn(assemblyInfra).For.Migrations());
+                .WithVersionTable(new TableVersionMigration())
+                .AddSqlServer()
+                .WithGlobalConnectionString(Configuration["ConnStrSqlServer"])
+                .ScanIn(typeof(TableVersionMigration).Assembly).For.Migrations());
         }
     }
 }

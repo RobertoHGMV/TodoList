@@ -20,7 +20,7 @@ namespace TodoList.Infra.DbMigrations
 
         public string SchemaName
         {
-            get { return "TodoList"; }
+            get { return ""; }
         }
 
         public string TableName
