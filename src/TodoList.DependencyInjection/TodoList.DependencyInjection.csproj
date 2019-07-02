@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\TodoList.FluentMigrations\TodoList.FluentMigrations.csproj" />
     <ProjectReference Include="..\TodoList.Business\TodoList.Business.csproj" />
     <ProjectReference Include="..\TodoList.Infra\TodoList.Infra.csproj" />
   </ItemGroup>

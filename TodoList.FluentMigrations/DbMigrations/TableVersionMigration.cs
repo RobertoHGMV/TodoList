@@ -1,6 +1,6 @@
 ﻿using FluentMigrator.Runner.VersionTableInfo;
 
-namespace TodoList.Infra.DbMigrations
+namespace TodoList.FluentMigrations.DbMigrations
 {
     [VersionTableMetaData]
     public class TableVersionMigration : IVersionTableMetaData
@@ -11,7 +11,6 @@ namespace TodoList.Infra.DbMigrations
         {
             get { return true; }
         }
-
 
         public string ColumnName
         {

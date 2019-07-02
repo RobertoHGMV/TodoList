@@ -1,6 +1,6 @@
 ﻿using FluentMigrator;
 
-namespace TodoList.Infra.DbMigrations.Migrations
+namespace TodoList.FluentMigrations.DbMigrations.Migrations
 {
     [Migration(201903241510)]
     public class UserTable : Migration

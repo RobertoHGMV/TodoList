@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TodoList.DependencyInjection;
-using TodoList.Infra.DbMigrations;
+using TodoList.FluentMigrations.DbMigrations;
 
 namespace TodoList.Api
 {
