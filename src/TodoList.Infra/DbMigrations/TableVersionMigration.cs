@@ -7,18 +7,40 @@ namespace TodoList.Infra.DbMigrations
     {
         public object ApplicationContext { get; set; }
 
-        public bool OwnsSchema => true;
+        public bool OwnsSchema
+        {
+            get { return true; }
+        }
 
-        public string SchemaName => "TodoList";
 
-        public string TableName => "TD_Version";
+        public string ColumnName
+        {
+            get { return "Version"; }
+        }
 
-        public string ColumnName => "Version";
+        public string SchemaName
+        {
+            get { return "TodoList"; }
+        }
 
-        public string DescriptionColumnName => "Description";
+        public string TableName
+        {
+            get { return "TD_Version"; }
+        }
 
-        public string UniqueIndexName => "TD_IDX_Version";
+        public string UniqueIndexName
+        {
+            get { return "TD_IDX_Version"; }
+        }
 
-        public string AppliedOnColumnName => "AppliedOn";
+        public virtual string AppliedOnColumnName
+        {
+            get { return "AppliedOn"; }
+        }
+
+        public virtual string DescriptionColumnName
+        {
+            get { return "Description"; }
+        }
     }
 }
