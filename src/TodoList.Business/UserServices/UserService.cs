@@ -22,12 +22,12 @@ namespace TodoList.Business.UserServices
 
         public IList<User> GetAll()
         {
-            throw new NotImplementedException();
+            return _respository.GetAll();
         }
 
-        public IList<User> GetByKey(int id)
+        public User GetByKey(int id)
         {
-            throw new NotImplementedException();
+            return _respository.GetByKey(id);
         }
 
         public User Add(AddUserInput userInput)

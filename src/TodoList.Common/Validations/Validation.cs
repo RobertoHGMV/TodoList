@@ -78,12 +78,12 @@ namespace TodoList.Common.Validations
             return this;
         }
 
-        public Validation IsInvalidEmail(string val, string property, string email)
+        public Validation IsInvalidEmail(string val, string property, string msgError)
         {
-            if (Regex.IsMatch(val,
+            if (!Regex.IsMatch(val,
                 @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
                 RegexOptions.IgnoreCase))
-                AddNotification(property, val);
+                AddNotification(property, msgError);
 
             return this;
         }

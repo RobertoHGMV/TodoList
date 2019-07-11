@@ -8,7 +8,7 @@ namespace TodoList.Domain.ValueObjects.LoginObj
         public Email(string address)
         {
             Address = address;
-            new EmailValidator(this);
+            Validate(new EmailValidator(this));
         }
 
         public string Address { get; private set; }

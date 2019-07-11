@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TodoList.Api.ViewModels;
+using TodoList.Domain.Commands.Inputs.User;
 using TodoList.Domain.Services;
 
 namespace TodoList.Api.Controllers
@@ -29,7 +30,7 @@ namespace TodoList.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ResultViewModel { Success = false, Docs = ex });
+                return BadRequest(new ResultViewModel { Success = false, Message = ex.Message, Docs = ex });
             }
         }
 
@@ -39,14 +40,62 @@ namespace TodoList.Api.Controllers
             try
             {
                 var person = _service.GetByKey(id);
-                if (person == null)
-                    return NotFound(new ResultViewModel { Success = false, Docs = { } });
+                if (person is null)
+                    return NotFound(new ResultViewModel { Success = false, Message = $"Usuário com [{id}] não encontrado", Docs = { } });
 
                 return Ok(new ResultViewModel { Success = true, Docs = person });
             }
             catch (Exception ex)
             {
-                return BadRequest(new ResultViewModel { Success = false, Docs = ex });
+                return BadRequest(new ResultViewModel { Success = false, Message = ex.Message, Docs = ex });
+            }
+        }
+
+        [HttpPost, Route("v1/[controller]")]
+        public IActionResult Add(AddUserInput user)
+        {
+            try
+            {
+                var userInput = _service.Add(user);
+                if (userInput.Invalid)
+                    return BadRequest(new ResultViewModel { Success = false, Docs = userInput.Notifications });
+
+                return Created($"v1/people/{userInput.Id}", new ResultViewModel { Success = true, Docs = userInput });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResultViewModel { Success = false, Message = ex.Message, Docs = ex });
+            }
+        }
+
+        [HttpPut, Route("v1/[controller]")]
+        public IActionResult Update(UpdateUserInput user)
+        {
+            try
+            {
+                var userUpdate = _service.Update(user);
+                if (userUpdate.Invalid)
+                    return BadRequest(new ResultViewModel { Success = false, Docs = userUpdate.Notifications });
+
+                return Ok(new ResultViewModel { Success = true, Docs = userUpdate });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResultViewModel { Success = false, Message = ex.Message, Docs = ex });
+            }
+        }
+
+        [HttpDelete, Route("v1/[controller]/{id}")]
+        public IActionResult Update(int id)
+        {
+            try
+            {
+                _service.Remove(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResultViewModel { Success = false, Message = ex.Message, Docs = ex });
             }
         }
     }

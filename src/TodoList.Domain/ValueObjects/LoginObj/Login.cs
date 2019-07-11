@@ -6,7 +6,7 @@ namespace TodoList.Domain.ValueObjects.LoginObj
     {
         public Login(string userName, string password, string confirmPassword)
         {
-            userName = UserName;
+            UserName = userName;
             Password = password;
             ConfirmPassword = confirmPassword;
             Validate(new LoginValidator(this));

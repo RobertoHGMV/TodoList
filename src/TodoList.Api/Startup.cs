@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TodoList.Common;
 using TodoList.DependencyInjection;
 using TodoList.FluentMigrations.DbMigrations;
 
@@ -25,6 +26,7 @@ namespace TodoList.Api
             services.AddResponseCompression();
             ResolveDependency(services);
             ConfigureFluentMigrator(services);
+            Runtime.ConnectionStringSqlServer = Configuration["ConnStrSqlServer"];
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMigrationRunner migrationRunner)
