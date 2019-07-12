@@ -5,6 +5,8 @@ namespace TodoList.Domain.Models.Users
 {
     public class User : Entity
     {
+        protected User() { }
+
         public User(Login login, Email email, string name)
         {
             Login = login;
