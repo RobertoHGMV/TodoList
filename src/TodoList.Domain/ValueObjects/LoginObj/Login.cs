@@ -4,6 +4,8 @@ namespace TodoList.Domain.ValueObjects.LoginObj
 {
     public class Login : Entity
     {
+        protected Login() { }
+
         public Login(string userName, string password, string confirmPassword)
         {
             UserName = userName;

@@ -27,7 +27,7 @@ namespace TodoList.Infra.Repositories
 
         public void Add(User user)
         {
-            _context.Add(user);
+            _context.Users.Add(user);
         }
 
         public void Update(User user)
@@ -37,7 +37,7 @@ namespace TodoList.Infra.Repositories
 
         public void Remove(User user)
         {
-            _context.Remove(user);
+            _context.Users.Remove(user);
         }
     }
 }

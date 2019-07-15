@@ -35,6 +35,7 @@ namespace TodoList.Api
                 app.UseDeveloperExceptionPage();
 
             app.UseMvc();
+            app.UseResponseCompression();
             migrationRunner.MigrateUp();
         }
 

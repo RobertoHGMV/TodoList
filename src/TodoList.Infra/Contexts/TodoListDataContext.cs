@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TodoList.Common;
+using TodoList.Common.Entities;
 using TodoList.Common.Notifications;
 using TodoList.Domain.Models.Users;
 using TodoList.Domain.ValueObjects.LoginObj;

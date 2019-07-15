@@ -46,7 +46,8 @@ namespace TodoList.Business.UserServices
         public User Update(UpdateUserInput userInput)
         {
             var user = _respository.GetByKey(userInput.Id);
-            user.Update(user.Email, user.Name);
+            var email = new Email(userInput.Email);
+            user.Update(email, userInput.Name);
 
             if (user.Invalid) return user;
 

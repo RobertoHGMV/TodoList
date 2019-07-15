@@ -10,6 +10,12 @@ namespace TodoList.Common.Entities
         public bool Invalid => !Valid;
         public IReadOnlyCollection<Notification> Notifications { get; private set; }
 
+        public Entity()
+        {
+            Valid = true;
+            Notifications = new List<Notification>();
+        }
+
         public bool Validate(Validation validation)
         {
             Notifications = validation.Notifications;

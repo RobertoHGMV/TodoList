@@ -5,6 +5,8 @@ namespace TodoList.Domain.ValueObjects.LoginObj
 {
     public class Email : Entity
     {
+        protected Email() { }
+
         public Email(string address)
         {
             Address = address;
