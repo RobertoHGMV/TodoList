@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoList.Api", "src\TodoLis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoList.DependencyInjection", "src\TodoList.DependencyInjection\TodoList.DependencyInjection.csproj", "{EDA367BC-C06F-433A-AA1E-8595223C32FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList.FluentMigrations", "TodoList.FluentMigrations\TodoList.FluentMigrations.csproj", "{5A3CA963-66B6-4605-AD76-E074F50DED18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoList.FluentMigrations", "src\TodoList.FluentMigrations\TodoList.FluentMigrations.csproj", "{A520A1CB-4525-4344-BA2A-8C0A158FEA7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{EDA367BC-C06F-433A-AA1E-8595223C32FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDA367BC-C06F-433A-AA1E-8595223C32FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDA367BC-C06F-433A-AA1E-8595223C32FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A3CA963-66B6-4605-AD76-E074F50DED18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A3CA963-66B6-4605-AD76-E074F50DED18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A3CA963-66B6-4605-AD76-E074F50DED18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A3CA963-66B6-4605-AD76-E074F50DED18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A520A1CB-4525-4344-BA2A-8C0A158FEA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A520A1CB-4525-4344-BA2A-8C0A158FEA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A520A1CB-4525-4344-BA2A-8C0A158FEA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A520A1CB-4525-4344-BA2A-8C0A158FEA7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
